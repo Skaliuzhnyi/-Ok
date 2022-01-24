@@ -4,4 +4,8 @@ $(function(){
     
   });
 
+  $(function(){
+  var mixer = mixitup('.product');
+});
+
 });
