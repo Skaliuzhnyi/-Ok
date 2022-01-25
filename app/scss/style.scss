@@ -37,8 +37,8 @@ a {
     color: $dark-500;
     border-bottom: 3px solid transparent;
     transition: color 0.5s,
-    box-shadow 0.5s,
-    border-radius 0.5s;
+      box-shadow 0.5s,
+      border-radius 0.5s;
 
     &:hover {
       color: $green-900;
@@ -111,6 +111,10 @@ a {
   &__top {
     background-color: $dark-800;
     padding: 11px 0;
+  }
+
+  &__address {
+    fill: red;
   }
 
   &__menu {
@@ -187,7 +191,7 @@ a {
     padding: 15px 0 15px 51px;
     border-radius: 6px;
     border: transparent;
-    background-image: url('../images/glass.svg');
+    background-image: url('../images/icons/icon-glass.svg');
     @extend %background;
     background-size: 20px 20px;
     background-position: 13px center;
@@ -294,6 +298,16 @@ a {
   @extend %background;
   background-size: 19px 32px;
   font-size: 0;
+
+  &:focus {
+    box-shadow: 0px 0px 0px 3px rgba(99, 166, 14, 0.5);
+  }
+
+  &:hover {
+    background-color: $green-200;
+  }
+
+  &:active {}
 }
 
 .slick-prev {
@@ -565,6 +579,11 @@ a {
   &__item:not(:last-child) {
     margin-right: 24px;
   }
+}
+
+.header__delivery:hover {
+  fill: red;
+  stroke: red;
 }
 
 
