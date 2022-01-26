@@ -231,6 +231,7 @@ a {
   &__icon-nav {
     fill: $green-900;
   }
+
   &__icon-chevron {
     fill: #7CB238;
   }
@@ -252,6 +253,7 @@ a {
     padding: 10px 0;
     top: 5px;
     text-align: center;
+    transition: box-shadow: 0.5s;
 
     &:focus {
       box-shadow: none;
@@ -279,6 +281,9 @@ a {
     @extend %opensans-600;
     color: $white;
     text-transform: uppercase;
+    transition: box-shadow: 0.5s,
+      background-color 0.5s,
+      color 0.5s;
 
     &:focus {
       box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.5);
@@ -379,7 +384,8 @@ a {
   @extend %background;
   background-size: 19px 32px;
   font-size: 0;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s,
+    box-shadow 0.5s;
 
   &:focus {
     box-shadow: 0 0 0 3px rgba(99, 166, 14, 0.5);
@@ -646,8 +652,10 @@ a {
     line-height: 16px;
     text-transform: uppercase;
     color: #FFFFFF;
+    transition: box-shadow 0.5s,
+      background-color 0.5s;
 
-    &:focus {
+    a &:focus {
       background-color: $green-900;
       box-shadow: 0 0 0 4px $green-200;
     }
