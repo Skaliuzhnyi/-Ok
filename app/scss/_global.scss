@@ -6,19 +6,18 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
-}
-
-.main {
-  flex-grow: 1;
-}
-
-body {
+  background-color: $white;
   background-color: #FFFFFF;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans',
+  sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.4;
   color: $dark-900;
+}
+
+.main {
+  flex-grow: 1;
 }
 
 .container {
