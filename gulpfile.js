@@ -7,6 +7,7 @@ const uglify        = require('gulp-uglify');
 const imagemin      = require('gulp-imagemin');
 const del           = require('del');
 const svgSprite     = require('gulp-svg-sprite');
+const cheerio       = require('gulp-cheerio');
 const browserSync   = require('browser-sync').create();
 
 function browsersync() {
@@ -60,17 +61,41 @@ function images() {
 }
 
 function svgSprites() {
-  return src('app/images/icons/*.svg') // выбираем в папке с иконками все файлы с расширением svg
+  return src('app/images/icons/*.svg')
     .pipe(
       svgSprite({
         mode: {
           stack: {
-            sprite: '../sprite.svg', // указываем имя файла спрайта и путь
+            sprite: '../sprite.svg',
           },
         },
       })
     )
-		.pipe(dest('app/images')); // указываем, в какую папку поместить готовый файл спрайта
+		.pipe(dest('app/images'));
+}
+
+function svgSprites() {
+  return src('app/images/icons/*.svg')
+    .pipe(cheerio({
+      run: ($) => {
+        $("[fill]").removeAttr("fill");
+        $("[stroke]").removeAttr("stroke");
+        $("[style]").removeAttr("style");
+      },
+      parserOptions: {
+        xmlMode: true
+      },
+    }))
+    .pipe(
+      svgSprite({
+        mode: {
+          stack: {
+            sprite: '../sprite.svg',
+          },
+        },
+      })
+    )
+    .pipe(dest('app/images'));
 }
 
 function build() {
