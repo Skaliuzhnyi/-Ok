@@ -5,8 +5,26 @@ $(function () {
     nextArrow: '<button class="slick-next slick-arrow" type="button"><svg class="slick-prev__arrow-left" width="19" height="32"><path d="M18.9641 14.9851L2.95082 0.392105C2.42535 -0.130702 1.57314 -0.130702 1.04767 0.392105C0.522196 0.914872 0.522196 1.76312 1.04767 2.28593L16.0954 16L1.049 29.7141C0.523529 30.2369 0.523529 31.0852 1.049 31.6079C1.57448 32.1307 2.42668 32.1307 2.95212 31.6079L18.9654 17.0149C19.2455 16.7362 19.3656 16.3668 19.3469 16.0014C19.3643 15.6346 19.2443 15.2652 18.9641 14.9851Z" fill="#505050"/></svg></button>',
   });
 
+  $('.star').rateYo({
+    starWidth: "16px",
+    ratedFill: "#FFB800",
+    numStars: 1
+  });
+
   $(function () {
-    var mixer = mixitup('.product');
+
+    var containerEl1 = document.querySelector('[data-ref="container-1"]');
+    var containerEl2 = document.querySelector('[data-ref="container-2"]');
+
+    var config = {
+      controls: {
+        scope: 'local'
+      }
+    };
+
+    var mixer1 = mixitup(containerEl1, config);
+    var mixer2 = mixitup(containerEl2, config);
+
   });
 
 });
