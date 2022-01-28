@@ -14,6 +14,7 @@ const imagemin = require('gulp-imagemin');
 const del = require('del');
 const svgSprite = require('gulp-svg-sprite');
 const cheerio = require('gulp-cheerio');
+const replace = require('gulp-replace');
 const browserSync = require('browser-sync').create();
 
 function browsersync() {
@@ -115,6 +116,17 @@ function svgSprites() {
       })
     )
     .pipe(dest('app/images'));
+    .pipe(replace('&gt;', '>'))
+      .pipe(
+        svgSprite({
+          mode: {
+            stack: {
+              sprite: '../sprite.svg',
+            },
+          },
+        })
+      )
+      .pipe(dest('app/images'));
 }
 
 function build() {
