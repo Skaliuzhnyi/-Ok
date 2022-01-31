@@ -31,16 +31,6 @@ $white: #FFFFFF;
   font-weight: 700;
 }
 
-%roboto-400 {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-}
-
-%roboto-500 {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 500;
-}
-
 %ruda-400 {
   font-family: 'Ruda', sans-serif;
   font-weight: 400;
@@ -65,4 +55,10 @@ $white: #FFFFFF;
 background-position: center center;
 background-repeat: no-repeat;
 background-size: contain;
+}
+
+%display-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
