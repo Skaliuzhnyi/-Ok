@@ -1,0 +1,46 @@
+.header-catalog {
+  position: relative;
+  margin-right: 30px;
+
+  &__btn {
+    width: 240px;
+    padding: 15px 38px 15px 60px;
+    background-color: $white;
+    border-radius: 6px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    color: $green-900;
+    background-image: url('../images/chevron.svg');
+    background-position: right 18px center;
+    background-repeat: no-repeat;
+    background-size: inherit;
+  }
+
+  &__burger {
+    position: absolute;
+    width: 20px;
+    height: 1px;
+    top: 24px;
+    left: 18px;
+    background-color: $green-900;
+
+    &::after,
+    &::before {
+      position: absolute;
+      content: '';
+      z-index: 1;
+      width: 25px;
+      height: 1px;
+      left: 0;
+      background-color: $green-900;
+    }
+
+    &::after {
+      top: -7px;
+    }
+
+    &::before {
+      top: 7px;
+    }
+  }
+}

@@ -1,0 +1,51 @@
+.products-filter {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 48px;
+
+  @include width($tablet-xl) {
+    margin-bottom: 38px;
+  }
+
+  @include width($tablet) {
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 24px;
+
+      @include width($tablet) {
+        margin-right: 31px;
+      }
+    }
+  }
+
+  &__btn {
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: $dark-500;
+    border-bottom: 3px solid transparent;
+    transition: color 0.5s, box-shadow 0.5s, border-radius 0.5s;
+
+    &.mixitup-control-active {
+      border-bottom: 3px solid rgba(99, 166, 14, 0.2);
+    }
+
+    &:hover {
+      color: $green-900;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 3px $green-200;
+      border-radius: 3px;
+    }
+
+    &:active {
+      box-shadow: none;
+    }
+  }
+}

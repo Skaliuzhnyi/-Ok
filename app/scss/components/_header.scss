@@ -1,0 +1,87 @@
+.header {
+  &__top {
+    background-color: $dark-800;
+    padding: 15px 0;
+  }
+
+  &__menu {
+    @extend %display-flex;
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__link {
+    padding: 5px 0;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 1.125;
+    letter-spacing: 0.03em;
+    color: $white;
+    text-transform: uppercase;
+
+    &--delivery,
+    &--line {
+      position: relative;
+
+      &::before {
+        position: absolute;
+        content: '';
+        height: 22px;
+        top: 0;
+        left: 0;
+        @extend %background;
+        filter: invert(100%) sepia(100%) saturate(1%) hue-rotate(312deg) brightness(105%) contrast(101%);
+      }
+    }
+
+    &--delivery {
+      padding-left: 44px;
+
+      &::before {
+        width: 32px;
+        background-image: url('../images/sprite.svg#icon-del-address');
+      }
+    }
+
+    &--line {
+      padding-left: 34px;
+
+      &::before {
+        width: 22px;
+        background-image: url('../images/sprite.svg#icon-tel');
+      }
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 48px;
+    }
+
+    &--nav {
+      &:not(:last-child) {
+        margin-right: 24px;
+      }
+    }
+  }
+
+  &__bottom {
+    padding: 25px 0;
+    background-color: $green-900;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    margin-right: 24px;
+  }
+
+  &__search {
+    margin-right: 45px;
+  }
+}

@@ -1,0 +1,48 @@
+.article {
+  padding-bottom: 18px;
+
+  &__mark {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    left: 20px;
+    width: 65px;
+    padding: 18px 6px 10px;
+    text-align: center;
+    background-color: $white;
+    border-radius: 0 0 4px 4px;
+  }
+
+  &__month {
+    font-size: 10px;
+    line-height: 14px;
+    letter-spacing: 0.1em;
+    margin-bottom: 4px;
+    @include line-clamp(1);
+  }
+
+  &__number {
+    @extend %ruda-600;
+    font-size: 30px;
+    line-height: 30px;
+    @include line-clamp(1);
+  }
+
+  &__img {
+    margin-bottom: 18px;
+    object-fit: cover;
+  }
+
+  &__text {
+    padding: 0 18px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.5;
+    transition: color 0.5s;
+    @include line-clamp(3);
+
+    &:hover {
+      color: $green-900;
+    }
+  }
+}

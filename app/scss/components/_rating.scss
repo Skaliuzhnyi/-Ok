@@ -1,0 +1,20 @@
+.rating {
+  position: relative;
+  padding-right: 18px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 3px;
+    right: 0;
+    background-image: url('../images/icon-star.svg');
+  }
+
+  &__rating-num {
+    margin-right: 2px;
+    line-height: 1;
+    color: #505050;
+  }
+}

@@ -1,0 +1,143 @@
+.product-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 409px;
+  padding: 57px 0 15px;
+  margin: 0 30px 30px 0;
+  border: 1px solid rgba(17, 17, 17, 0.2);
+  border-radius: 6px;
+  background-color: $white;
+  transition: border-color 0.5s;
+
+  &:hover {
+    border: 1px solid #63A60E;
+  }
+
+  &__heart {
+    position: absolute;
+    padding: 9px 6px 6px;
+    top: 7px;
+    right: 5px;
+    fill: $silver-600;
+    transition: fill 0.5s, background-color 0.5s, box-shadow 0.5s;
+
+    &:hover {
+      fill: $yellow-900;
+    }
+
+    &:focus {
+      background-color: rgba(255, 255, 255, 0.0001);
+      box-shadow: 0 0 0 3px #E0EDCF;
+      border-radius: 3px;
+    }
+
+    &:active {
+      background-color: rgba(255, 255, 255, 0.0001);
+      box-shadow: none;
+      fill: rgba(255, 184, 0, 0.5);
+    }
+  }
+
+  &__link {
+    position: relative;
+    z-index: 0;
+    margin-bottom: 18px;
+
+    @include width($phone) {
+      margin-bottom: 15px;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      opacity: 0;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transition: opacity 1s;
+    }
+
+    &::before {
+      z-index: 1;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    &::after {
+      z-index: 2;
+      width: 48px;
+      height: 48px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 24px;
+      background-image: url('../images/icon-glass-green.svg');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 20px 20px;
+      background-color: #fff;
+    }
+
+    &:hover::before,
+    &:hover::after {
+      opacity: 1;
+    }
+  }
+
+  &__img {
+    object-fit: cover;
+  }
+
+  &__subtitle {
+    padding: 0 18px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    @include line-clamp(3);
+  }
+
+  &__inner {
+    margin-top: auto;
+    padding: 0 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  &__price {
+    line-height: 1;
+    letter-spacing: 0.03em;
+
+    &--old {
+      display: block;
+      position: relative;
+      color: $silver-600;
+
+      &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        bottom: 7px;
+        left: 0;
+        background-color: $silver-600;
+        transform: rotate(-14.99deg);
+      }
+    }
+  }
+
+  &__btn {
+    padding: 8px;
+    width: 32px;
+    height: 32px;
+    fill: $white;
+
+    &:active {
+      fill: rgba(255, 255, 255, 0.5);
+    }
+  }
+}
