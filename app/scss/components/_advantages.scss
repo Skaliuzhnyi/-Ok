@@ -1,0 +1,51 @@
+.advantages {
+  background-color: $silver-100;
+  padding: 48px 0 29px;
+
+  @include width($tablet-xl) {
+    padding: 30px 15px;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__item {
+    width: 264px;
+    padding-left: 74px;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 50px 50px;
+
+    &:not(:last-child) {
+      margin-right: 65px;
+    }
+
+    &--bike {
+      background-image: url('../images/icons/icon-bike.svg');
+      background-size: 50px 42px;
+    }
+
+    &--box {
+      background-image: url('../images/icons/icon-box.svg');
+    }
+
+    &--hours {
+      background-image: url('../images/icons/icon-hours.svg');
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 7px;
+    font-weight: 600;
+    font-size: 16px;
+    @include line-clamp(2);
+  }
+
+  &__text {
+    display: block;
+    @include line-clamp(2);
+    color: $dark-500;
+  }
+}

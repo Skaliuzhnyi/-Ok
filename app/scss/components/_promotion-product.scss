@@ -1,0 +1,14 @@
+.promotion-product {
+  background-color: #F5F5F5;
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -30px 18px 0;
+  }
+
+  &__btn {
+    display: block;
+    margin: 0 auto;
+  }
+}

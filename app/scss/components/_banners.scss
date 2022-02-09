@@ -1,0 +1,76 @@
+.banners {
+  padding-bottom: 72px;
+
+  &__list {
+    display: grid;
+    grid-template-columns: 2.1fr 1fr 1fr;
+    grid-gap: 30px;
+  }
+
+  &__item {
+    padding: 76px 32px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    @extend %background;
+  }
+
+  &__text,
+  &__link {
+    font-weight: 700;
+    line-height: 1;
+    @include line-clamp(2);
+
+    &--white {
+      color: $white;
+      text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  &__text {
+    margin-bottom: 18px;
+    font-size: 12px;
+    line-height: 1;
+    letter-spacing: 0.1em;
+  }
+
+  &__title {
+    width: 70%;
+    margin-bottom: 12px;
+    font-size: 30px;
+    letter-spacing: 0;
+    text-align: left;
+    @include line-clamp(2);
+
+    &--white {
+      color: $white;
+      text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.25);
+    }
+
+    @include width($tablet) {
+      width: 100%;
+      margin-bottom: 77px;
+      font-size: 24px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    padding-bottom: 8px;
+
+    &::after {
+      position: absolute;
+      content: '';
+      width: 165px;
+      height: 2px;
+      left: 0;
+      bottom: 0;
+      background-color: $dark-500;
+    }
+
+    &--white {
+      &::after {
+        background-color: $white;
+      }
+    }
+  }
+}

@@ -28,5 +28,16 @@ $(function () {
   var mixer1 = mixitup(containerEl1, config);
   var mixer2 = mixitup(containerEl2, config);
 
+});
 
+$('.header-catalog__btn').on('click', function () {
+  $('.header-catalog__btn').toggleClass('header-catalog__btn--active');
+  $('.header-catalog__list').toggleClass('header-catalog__list--active');
+  $('body').toggleClass('lock');
+});
+
+$('.header-catalog__link').on('click', function () {
+  $('.header-catalog__btn').removeClass('header-catalog__btn--active');
+  $('.header-catalog__list').removeClass('header-catalog__list--active');
+  $('body').removeClass('lock');
 });

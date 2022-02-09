@@ -1,0 +1,200 @@
+.slider-top {
+  position: relative;
+
+  &__wrapper {
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__item {
+    @extend %background;
+  }
+
+  &__content {
+    padding: 24px 24px 36px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 4px;
+
+    @include width($phone) {
+      padding: 15px;
+    }
+  }
+
+  &__title {
+    @extend %ruda-900;
+    font-size: 60px;
+    @include line-clamp(3);
+    line-height: 1.3;
+    text-transform: uppercase;
+    color: $dark-500;
+
+    @include width($desktop) {
+      font-weight: 700;
+      font-size: 50px;
+    }
+
+    @include width($tablet) {
+      font-size: 30px;
+    }
+
+    @include width($phone) {
+      font-size: 20px;
+    }
+  }
+
+  &__element {
+    display: block;
+    color: $red-900;
+    margin-bottom: 7px;
+
+    @include width($phone) {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 48px;
+    font-size: 16px;
+    @include line-clamp(2);
+    color: $dark-500;
+
+    @include width($tablet-xl) {
+      margin-bottom: 35px;
+    }
+
+    @include width($phone) {
+      margin-bottom: 26px;
+    }
+  }
+
+  .slick-dots {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+
+    @include width($desktop) {
+      visibility: visible;
+    }
+
+    @include width($tablet) {
+      bottom: 24px;
+    }
+
+    @include width($phone) {
+      bottom: 16px;
+    }
+
+    li {
+      list-style: none;
+
+      &:not(last-child) {
+        margin-right: 30px;
+
+        @include width($phone) {
+          margin-right: 12px;
+        }
+      }
+    }
+
+    button {
+      font-size: 0;
+      width: 20px;
+      height: 20px;
+      background-color: $white;
+      border: 1px solid $silver-600;
+      border-radius: 50%;
+
+      @include width($phone) {
+        width: 10px;
+        height: 10px;
+      }
+    }
+
+    li.slick-active button {
+      background-color: $green-900;
+      border: 1px solid $green-900;
+      border-radius: 50%;
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+
+    @include width($desktop) {
+      visibility: hidden;
+    }
+
+    &.slick-disabled {
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 6px;
+
+      path {
+        fill: $silver-600;
+      }
+
+      &:focus {
+        box-shadow: none;
+      }
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.8);
+
+        path {
+          fill: $silver-600;
+        }
+      }
+
+      &:active {
+        box-shadow: none;
+        background-color: #F3F3F2;
+      }
+    }
+
+    &--prev,
+    &--next {
+      z-index: 1;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 60px;
+      height: 60px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 6px;
+      background-repeat: no-repeat;
+      background-size: 19px 32px;
+      font-size: 0;
+      transition: background-color 0.3s, box-shadow 0.5s, fill 0.5s;
+
+      &:focus {
+        box-shadow: 0 0 0 3px rgba(99, 166, 14, 0.5);
+      }
+
+      &:hover {
+        background-color: $green-200;
+
+        path {
+          fill: $green-900;
+        }
+      }
+
+      &:active {
+        box-shadow: none;
+        background-color: #F3F3F2;
+      }
+    }
+
+    &--prev {
+      left: 60px;
+    }
+
+    &--next {
+      right: 60px;
+    }
+  }
+}

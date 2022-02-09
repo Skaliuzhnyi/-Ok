@@ -137,6 +137,7 @@ function watching() {
   watch(['app/**/*.html']).on('change', browserSync.reload);
   watch(['app/images/icons/*.svg'], svgSprites);
   watch(['app/html/**/*.html'], htmlInclude);
+  watch(['app/scss/**/*.scss']).on('change', browserSync.reload);
 }
 
 exports.htmlInclude = htmlInclude;
