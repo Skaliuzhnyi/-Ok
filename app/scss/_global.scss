@@ -12,6 +12,10 @@ body {
   color: $dark-900;
 }
 
+body.lock {
+  overflow: hidden;
+}
+
 .wrapper {
   height: 100%;
   display: flex;
