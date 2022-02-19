@@ -1,11 +1,49 @@
 .top-products {
+  
+  @include width($tablet-xl) {
+  padding: 48px 15px;
+  }
+
   &__list {
     display: flex;
     flex-wrap: wrap;
     margin: 0 -30px 18px 0;
 
+    @include width($desktop) {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      margin-right: -20px;
+    }
+
+    @include width($tablet-xl) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      margin-right: -10px;
+    }
+
+    @include width($tablet) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
     @include width($phone) {
-      margin: 0 -5px 19px 0;
+      margin-right: -5px;
+    }
+  }
+
+  &__item {
+    margin: 0 30px 30px 0;
+
+    @include width($desktop) {
+      margin: 0 20px 20px 0;
+    }
+
+    @include width($tablet-xl) {
+      margin: 0 10px 10px 0;
+    }
+
+    @include width($phone) {
+      margin: 0 5px 5px 0;
     }
   }
 }

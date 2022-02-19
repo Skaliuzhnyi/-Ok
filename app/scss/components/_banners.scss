@@ -1,10 +1,24 @@
 .banners {
   padding-bottom: 72px;
 
+  @include width($tablet-xl) {
+    padding-bottom: 48px;
+  }
+
   &__list {
     display: grid;
     grid-template-columns: 2.1fr 1fr 1fr;
     grid-gap: 30px;
+
+    @include width($desktop) {
+      grid-gap: 15px;
+    }
+
+    @include width($tablet-xl) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__item {
@@ -12,6 +26,18 @@
     border-radius: 6px;
     text-transform: uppercase;
     @extend %background;
+
+    @include width($desktop) {
+      padding: 76px 15px 30px;
+    }
+
+    @include width($tablet-xl) {
+      width: 500px;
+    }
+
+    @include width($phone) {
+      width: 345px;
+    }
   }
 
   &__text,
@@ -31,6 +57,10 @@
     font-size: 12px;
     line-height: 1;
     letter-spacing: 0.1em;
+
+    @include width($desktop) {
+      margin-bottom: 15px;
+    }
   }
 
   &__title {
@@ -41,15 +71,28 @@
     text-align: left;
     @include line-clamp(2);
 
-    &--white {
-      color: $white;
-      text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.25);
+    @include width($desktop) {
+      width: 80%;
+      margin-bottom: 40px;
     }
 
     @include width($tablet) {
       width: 100%;
       margin-bottom: 77px;
       font-size: 24px;
+    }
+
+    @include width($phone) {
+      width: 50%;
+    }
+
+    &--white {
+      color: $white;
+      text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.25);
+
+      @include width($phone) {
+        width: 80%;
+      }
     }
   }
 

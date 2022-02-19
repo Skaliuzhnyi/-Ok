@@ -9,16 +9,23 @@
 
   @include width($tablet) {
     flex-wrap: wrap;
-    margin-bottom: 24px;
+    margin-bottom: 10px;
   }
 
   &__item {
     &:not(:last-child) {
-      margin-right: 24px;
+      margin-right: 25px;
+    }
 
-      @include width($tablet) {
-        margin-right: 31px;
+    @include width($tablet) {
+      margin-bottom: 10px;
+    } 
+
+    @include width($phone) {
+      &:not(:last-child) {
+        margin-right: 0;
       }
+      padding: 0 11px;
     }
   }
 

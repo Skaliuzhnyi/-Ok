@@ -5,10 +5,21 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 30px;
+
+    @include width($phone) {
+      padding: 0 14px 24px;
+      margin-bottom: 0px;
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
 
   &__title {
     margin-bottom: 0;
+
+    @include width($phone) {
+      margin-bottom: 12px;
+    }
   }
 
   &__transfer {
@@ -22,6 +33,11 @@
       background-color 0.5s,
       box-shadow 0.5s,
       border-radius 0.5s;
+
+      @include width($phone) {
+        line-height: 1;
+        padding-bottom: 5px;
+      }
 
     &:focus {
       box-shadow: 0 0 0 3px $green-200;
@@ -43,6 +59,12 @@
   &__list {
     display: flex;
     justify-content: space-between;
+
+    @include width($tablet) {
+      flex-direction: column;
+      align-items: center;
+      padding: 0 15px;
+    }
   }
 
 
@@ -51,5 +73,20 @@
     max-width: 410px;
     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.25);
     border-radius: 6px;
+
+    @include width($desktop) {
+
+      &:not(:last-child) {
+        margin-right: 10px;
+      }
+    }
+
+    @include width($tablet) {
+
+      &:not(:last-child) {
+        margin: 0 0 12px;
+      }
+    }
   }
 }
+    

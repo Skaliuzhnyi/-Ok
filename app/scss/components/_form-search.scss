@@ -4,7 +4,6 @@
   width: 100%;
 
   &__input {
-    position: relative;
     width: 100%;
     padding: 15px 165px 15px 51px;
     border-radius: 6px;
@@ -14,6 +13,15 @@
     background-position: 16px center;
     background-repeat: no-repeat;
     background-size: 20px 20px;
+
+    @include width($desktop) {
+      padding-right: 120px;
+    }
+
+    @include width($tablet-xl) {
+      padding-left: 35px;
+      background-position: 10px center;
+    }
 
     &::placeholder {
       color: $dark-800;
@@ -30,9 +38,7 @@
     color: $white;
     text-transform: uppercase;
     background-color: $dark-800;
-    transition: box-shadow 0.5s,
-      background-color 0.5s,
-      color 0.5s;
+    transition: box-shadow 0.5s, background-color 0.5s, color 0.5s;
 
     &:focus {
       box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.5);
@@ -45,6 +51,39 @@
     &:active {
       box-shadow: none;
       color: rgba(255, 255, 255, 0.5);
+    }
+
+    @include width($desktop) {
+      padding: 15px 30px;
+    }
+  }
+
+  &__tablet {
+    display: none;
+    z-index: 5;
+    position: absolute;
+    width: 375px;
+    top: 132px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid $dark-800;
+
+    @include width($phone) {
+      top: 112px;
+    }
+
+    &--active {
+      display: block;
+    }
+
+    .form-search__input {
+      padding: 14px 120px 14px 45px;
+      border-radius: 0;
+    }
+
+    .form-search__btn {
+      padding: 15px 26px;
+      border-radius: 0;
     }
   }
 }

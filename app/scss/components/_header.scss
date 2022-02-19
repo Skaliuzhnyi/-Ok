@@ -1,29 +1,41 @@
 .header {
   &__top {
+    position: relative;
     background-color: $dark-800;
     padding: 15px 0;
+
+    @include width($phone) {
+      padding-left: 22px;
+    }
   }
 
   &__menu {
     @extend %display-flex;
+
+    @include width($tablet-xl) {
+      flex-direction: row-reverse;
+    }
   }
 
   &__list {
     display: flex;
   }
 
-  &__link {
-    padding: 5px 0;
-    font-weight: 700;
-    font-size: 13px;
-    line-height: 1.125;
-    letter-spacing: 0.03em;
-    color: $white;
-    text-transform: uppercase;
+  &__item {
 
     &--delivery,
     &--line {
       position: relative;
+      margin-right: 48px;
+
+      @include width($tablet-xl) {
+
+        margin-right: 0;
+
+        &:not(:last-child) {
+          margin-right: 31px;
+        }
+      }
 
       &::before {
         position: absolute;
@@ -53,35 +65,88 @@
         background-image: url('../images/sprite.svg#icon-tel');
       }
     }
-  }
-
-  &__item {
-    &:not(:last-child) {
-      margin-right: 48px;
-    }
 
     &--nav {
+
       &:not(:last-child) {
-        margin-right: 24px;
+      margin-right: 24px;
       }
+    }
+  }
+
+  &__link {
+    padding: 5px 0;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 1.125;
+    letter-spacing: 0.03em;
+    color: $white;
+    text-transform: uppercase;
+
+    @include width($tablet-xl) {
+      font-size: 0;
     }
   }
 
   &__bottom {
     padding: 25px 0;
     background-color: $green-900;
+
+    @include width($tablet-xl) {
+      padding: 10px 0;
+    }
+
+    @include width($phone) {
+      padding: 0 15px;
+    }
   }
 
   &__inner {
     display: flex;
     align-items: center;
+
+    @include width($tablet-xl) {
+      justify-content: space-between;
+    }
   }
 
   &__logo {
     margin-right: 24px;
+
+    @include width($tablet-xl) {
+      margin-right: 0;
+    }
+
+    @include width($phone) {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo__img {
+
+      @include width($phone) {
+        display: none;
+      }
+    }
+
+    .logo__min-img {
+      display: none;
+
+      @include width($phone) {
+        display: block;
+      }
+    }
   }
 
   &__search {
-    margin-right: 45px;
+    margin-right: 34px;
+
+    @include width($desktop) {
+      margin-right: 10px;
+    }
+
+    @include width($tablet-xl) {
+      display: none;
+    }
   }
 }

@@ -1,7 +1,13 @@
-.promotion-filter {
+.promotion-product-filter {
   &__item {
     &:not(:last-child) {
       margin-right: 30px;
+    }
+
+    @include width($phone) {
+      &:not(:last-child) {
+        margin-right: 3px;
+      }
     }
   }
 }
