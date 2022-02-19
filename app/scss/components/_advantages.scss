@@ -9,6 +9,15 @@
   &__list {
     display: flex;
     justify-content: center;
+
+    @include width($tablet) {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @include width($phone) {
+      align-items: start;
+    }
   }
 
   &__item {
@@ -18,8 +27,20 @@
     background-position: 0 0;
     background-size: 50px 50px;
 
+    @include width($phone) {
+      width: 100%;
+    }
+
     &:not(:last-child) {
       margin-right: 65px;
+
+      @include width($tablet-xl) {
+        margin-right: 10px;
+      }
+
+      @include width($tablet) {
+        margin: 0 0 30px;
+      }
     }
 
     &--bike {

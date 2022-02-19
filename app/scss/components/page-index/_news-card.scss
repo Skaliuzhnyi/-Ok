@@ -1,5 +1,9 @@
-.article {
+.news-card {
   padding-bottom: 18px;
+
+  @include width($phone) {
+    padding-bottom: 15px;
+  }
 
   &__mark {
     position: absolute;
@@ -18,6 +22,7 @@
     line-height: 14px;
     letter-spacing: 0.1em;
     margin-bottom: 4px;
+    text-transform: uppercase;
     @include line-clamp(1);
   }
 
@@ -31,6 +36,11 @@
   &__img {
     margin-bottom: 18px;
     object-fit: cover;
+
+    @include width($phone) {
+      margin-bottom: 15px;
+      height: 200px;
+    }
   }
 
   &__text {
@@ -40,6 +50,11 @@
     line-height: 1.5;
     transition: color 0.5s;
     @include line-clamp(3);
+
+    @include width($phone) {
+      font-size: 14px;
+      padding: 0 15px;
+    }
 
     &:hover {
       color: $green-900;

@@ -14,6 +14,21 @@ body {
 
 body.lock {
   overflow: hidden;
+
+  .wrapper {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: 6;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.15);
+    }
+  }
 }
 
 .wrapper {
@@ -57,7 +72,7 @@ body.lock {
   }
 
   @include width($phone) {
-    padding: 42px 0;
+    padding: 48px 0;
   }
 }
 
@@ -107,6 +122,10 @@ body.lock {
   @include width($tablet) {
     display: inline-block;
     font-size: 14px;
+  }
+
+  @include width($phone) {
+    font-size: 18px;
   }
 
   &--white {

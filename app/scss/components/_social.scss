@@ -1,6 +1,10 @@
 .social {
   display: flex;
 
+  @include width($tablet) {
+    justify-content: center;
+  }
+
   &__item {
     &:not(:last-child) {
       margin-right: 12px;

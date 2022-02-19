@@ -2,6 +2,14 @@
   position: relative;
   margin-right: 30px;
 
+  @include width($desktop) {
+    margin-right: 20px;
+  }
+
+  @include width($tablet-xl) {
+    display: none;
+  }
+
   &__btn {
     width: 240px;
     padding: 15px 38px 15px 60px;
@@ -37,7 +45,7 @@
       width: 25px;
       height: 1px;
       left: 0;
-      background-color: $green-900;
+      background-color: inherit;
     }
 
     &::after {
@@ -60,6 +68,7 @@
 
     &--active {
       opacity: 1;
+      z-index: 2;
     }
   }
 

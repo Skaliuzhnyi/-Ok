@@ -2,10 +2,10 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 300px;
+  max-width: 300px;
   height: 409px;
+  height: 100%;
   padding: 57px 0 15px;
-  margin: 0 30px 30px 0;
   border: 1px solid rgba(17, 17, 17, 0.2);
   border-radius: 6px;
   background-color: $white;
@@ -13,6 +13,10 @@
 
   &:hover {
     border: 1px solid #63A60E;
+  }
+
+  @include width($phone) {
+    padding-bottom: 12px;
   }
 
   &__heart {
@@ -37,6 +41,10 @@
       background-color: rgba(255, 255, 255, 0.0001);
       box-shadow: none;
       fill: rgba(255, 184, 0, 0.5);
+    }
+
+    @include width($phone) {
+      right: 0;
     }
   }
 
@@ -91,13 +99,24 @@
 
   &__img {
     object-fit: cover;
+
+    @include width($phone) {
+      object-fit: contain;
+      height: 120px;
+    }
   }
 
   &__subtitle {
     padding: 0 18px;
+    margin-bottom: 9px;
     font-weight: 600;
     letter-spacing: 0.03em;
     @include line-clamp(3);
+
+    @include width($phone) {
+      padding: 0 11px;
+      margin-bottom: 48px;
+    }
   }
 
   &__inner {
@@ -106,6 +125,11 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+
+    @include width($phone) {
+      margin-top: 0;
+      padding: 0 11px;
+    }
   }
 
   &__price {
@@ -139,5 +163,10 @@
     &:active {
       fill: rgba(255, 255, 255, 0.5);
     }
+  }
+
+  &__icon {
+    width: 24px;
+    height: 21px;
   }
 }

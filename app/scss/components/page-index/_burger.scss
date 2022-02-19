@@ -1,0 +1,36 @@
+.burger {
+  display: none;
+  width: 30px;
+  height: 22px;
+  position: relative;
+
+  @include width($tablet-xl) {
+    display: block;
+  }
+
+  &__menu {
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    left: 0;
+    background-color: #fff;
+
+    &::after,
+    &::before {
+      position: absolute;
+      content: '';
+      left: 0;
+      width: 30px;
+      height: 2px;
+      background-color: #fff;
+    }
+
+    &::before {
+      top: -10px;
+    }
+
+    &::after {
+      top: 10px;
+    }
+  }
+}

@@ -7,6 +7,8 @@
 
 @import 'components/header';
 @import 'components/logo';
+@import 'components/page-index/burger';
+@import 'components/sidenav';
 @import 'components/header-catalog';
 @import 'components/form-search';
 @import 'components/user-nav';
@@ -19,12 +21,11 @@
 @import 'components/banners';
 @import 'components/page-index/promotion-filter';
 @import 'components/promotion-product';
-@import 'components/promotion-card';
 @import 'components/availability';
 @import 'components/rating';
 @import 'components/page-index/partners-slider';
 @import 'components/page-index/news';
-@import 'components/page-index/article';
+@import 'components/page-index/news-card';
 @import 'components/footer';
-@import 'components/footer-address';
+@import 'components/contacts';
 @import 'components/social';

@@ -2,30 +2,78 @@
   background-color: $dark-800;
   padding: 30px 0 24px;
 
+  @include width($tablet) {
+    padding-top: 24px;
+  }
+
   &__logo {
     display: block;
     margin-bottom: 30px;
+
+    @include width($tablet) {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
   }
 
   &__inner {
     display: flex;
     justify-content: space-between;
     margin-bottom: 30px;
+
+    @include width($tablet) {
+      flex-direction: column-reverse;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    @include width($phone) {
+      margin-bottom: 0;
+    }
   }
 
   &__promotion {
     margin-right: 70px;
+
+    @include width($tablet-xl) {
+      margin-right: 20px;
+    }
+
+    @include width($tablet) {
+      padding: 24px 0;
+      margin-right: 0;
+    }
   }
 
   &__text {
-    margin-bottom: 18px;
+    margin-bottom: 21px;
     line-height: 1;
     color: $white;
   }
 
+  &__menu {
+
+    @include width($tablet) {
+      padding: 24px 0 6px 66px;
+    }
+  }
+
   &__list {
-    columns: 58px 3;
+    column-count: 3;
     column-gap: 75px;
+
+    @include width($desktop) {
+      column-gap: 50px;
+    }
+
+    @include width($tablet-xl) {
+      column-count: 2;
+    }
+
+    @include width($phone) {
+      column-gap: 51px;
+    }
   }
 
   &__item {
@@ -36,6 +84,13 @@
     color: $white;
   }
 
+  &__contacts {
+
+    @include width($tablet) {
+      margin-bottom: 24px;
+    }
+  }
+
   &__bottom {
     padding-top: 24px;
     border-top: 1px solid rgb(255, 255, 255, 0.1);
@@ -44,6 +99,11 @@
   &__license {
     display: flex;
     justify-content: space-between;
+
+    @include width($phone) {
+      flex-direction: column-reverse;
+      align-items: center;
+    }
   }
 
   &__license-text {
@@ -52,6 +112,10 @@
 
   &__wrapper {
     display: flex;
+
+    @include width($phone) {
+      margin-bottom: 25px;
+    }
   }
 
   &__items {
@@ -71,32 +135,36 @@
     line-height: 1;
     letter-spacing: 0;
 
+    @include width($phone) {
+      padding: 10px 130px 10px 12px;
+    }
+
     &::placeholder {
       color: #4F4F4F;
     }
   }
 
   &__btn {
-    padding: 14px 16px;
+    padding: 14px 16px 13px;
     background-color: $green-900;
     font-size: 12px;
     font-weight: 700;
     line-height: 16px;
     letter-spacing: 0;
 
-    &:focus {
-      background-color: $green-900;
-      box-shadow: 0 0 0 4px $green-200;
+    @include width($phone) {
+      padding: 12px;
     }
+  }
 
-    &:hover {
-      box-shadow: none;
-      background-color: #4D810C;
-    }
+  &__line {
+    display: none;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
 
-    &:active {
-      color: rgba(255, 255, 255, 0.5);
-      box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.25);
+    @include width($tablet) {
+      display: block;
     }
   }
 }
