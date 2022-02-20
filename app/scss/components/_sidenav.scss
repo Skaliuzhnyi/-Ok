@@ -98,8 +98,20 @@
     }
 
     &__btn {
+      width: 100%;
+      padding-right: 85px;
       color: $dark-800;
       background-image: none;
+      background-color: $white;
+    }
+
+    &__list {
+      width: 100%;
+      display: none;
+
+      &--active {
+        display: block;
+      }
     }
   }
 
@@ -117,7 +129,7 @@
       &--phone,
       &--point {
         position: relative;
-        
+
         &::before {
           content: '';
           position: absolute;
@@ -128,7 +140,7 @@
           background-size: contain;
           background-repeat: no-repeat;
         }
-      } 
+      }
 
       &--phone {
 
@@ -159,6 +171,7 @@
 
   &__list {
     padding: 24px 15px;
+    height: 329px;
     overflow-y: auto;
   }
 
