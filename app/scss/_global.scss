@@ -14,8 +14,14 @@ body {
 
 body.lock {
   overflow: hidden;
+}
 
-  .wrapper {
+.wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &--active {
     position: relative;
 
     &::before {
@@ -29,12 +35,6 @@ body.lock {
       background-color: rgba(0, 0, 0, 0.15);
     }
   }
-}
-
-.wrapper {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
 }
 
 .main {
